@@ -1926,7 +1926,7 @@ Prefab:
     - target: {fileID: 114155049277669090, guid: 8817ec9e96f0ec74c928b608ab14b917,
         type: 2}
       propertyPath: moveSpeed
-      value: 80.125
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 212238796302018188, guid: 8817ec9e96f0ec74c928b608ab14b917,
         type: 2}
@@ -2775,6 +2775,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
