@@ -6,10 +6,7 @@ public class PlayerInput : MonoBehaviour {
 
 	Player player;
     Animator anim;
-<<<<<<< HEAD
     bool jump = false;
-=======
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 
 
     void Start () {
@@ -22,11 +19,7 @@ public class PlayerInput : MonoBehaviour {
 
         Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
 		player.SetDirectionalInput (directionalInput);
-<<<<<<< HEAD
         if((Input.GetAxisRaw("Horizontal")>0||Input.GetAxisRaw("Horizontal")<0)&& player.canmove)
-=======
-        if(Input.GetAxisRaw("Horizontal")>0||Input.GetAxisRaw("Horizontal")<0)
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
         {
             anim.SetBool("Iswalk",true);
         }
@@ -35,17 +28,10 @@ public class PlayerInput : MonoBehaviour {
 
         if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
-<<<<<<< HEAD
         }
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			player.OnJumpInputUp ();
         }
-=======
-		}
-		if (Input.GetKeyUp (KeyCode.Space)) {
-			player.OnJumpInputUp ();
-		}
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
         if(Input.GetAxisRaw("Horizontal")<0&&left == false)
         {
             Flip();

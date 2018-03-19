@@ -24,7 +24,6 @@ public class TextBoxmanager : MonoBehaviour {
 
     public float typeSpeed;
     // Use this for initialization
-<<<<<<< HEAD
     public void ReloadScript(TextAsset theText)
     {
         if (theText != null)
@@ -34,8 +33,6 @@ public class TextBoxmanager : MonoBehaviour {
             textLines = (theText.text.Split('\n'));
         }
     }
-=======
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
     void Start () {
 
         if (isActive)
@@ -47,39 +44,23 @@ public class TextBoxmanager : MonoBehaviour {
             DisableTextBox();
         }
         player = FindObjectOfType<Player>();
-<<<<<<< HEAD
         if (textfile != null)
-=======
-
-        if(textfile != null)
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
         {
             textLines = (textfile.text.Split('\n'));
         }
 
-<<<<<<< HEAD
         if (endAtLine == 0)
         {
             endAtLine = textLines.Length - 1;
         }
        
-=======
-        if(endAtLine == 0)
-        {
-            endAtLine = textLines.Length - 1;
-        }
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-<<<<<<< HEAD
 
         if (!isActive)
-=======
-        if(!isActive)
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
         {
             return;
         }
@@ -143,16 +124,5 @@ public class TextBoxmanager : MonoBehaviour {
         player.canmove = true;
     }
 
-<<<<<<< HEAD
    
-=======
-    public void ReloadScript(TextAsset theText)
-    {
-        if(theText != null)
-        {
-            textLines = new string[1];
-            textLines = (theText.text.Split('\n'));
-        }
-    }
->>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 }
