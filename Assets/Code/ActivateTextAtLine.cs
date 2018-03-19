@@ -22,6 +22,7 @@ public class ActivateTextAtLine : MonoBehaviour {
     public Inventory inventory;
     public GameObject requiment;
     bool firsttime = true;
+<<<<<<< HEAD
     bool succeed = false;
     bool onetime = true;
     public bool give ;
@@ -29,6 +30,13 @@ public class ActivateTextAtLine : MonoBehaviour {
     void Start () {
         //theTextBox = FindObjectOfType<TextBoxmanager>();
         //succeed = false;
+=======
+    bool succeed;
+    bool onetime = true;
+    // Use this for initialization
+    void Start () {
+        theTextBox = FindObjectOfType<TextBoxmanager>();
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
     }
 	
 	// Update is called once per frame
@@ -47,9 +55,14 @@ public class ActivateTextAtLine : MonoBehaviour {
                 {
                     for (int i = 0; i < inventory.inventory.Length; i++)
                     {
+<<<<<<< HEAD
                         if ((inventory.inventory[i] == requiment) && !give)
                         {
                             Debug.Log("kuay5");
+=======
+                        if (inventory.inventory[i] == requiment)
+                        {
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
                             inventory.RemoveItemfrominventory(inventory.inventory[i]);
                             inventory.AddItem(item);
                             Destroy(item);
@@ -67,6 +80,7 @@ public class ActivateTextAtLine : MonoBehaviour {
                              }*/
                             break;
                         }
+<<<<<<< HEAD
                         if ((inventory.inventory[i] == requiment||requiment == null) && give )
                         {
                             //Debug.Log("succeeddddddddd");
@@ -92,6 +106,11 @@ public class ActivateTextAtLine : MonoBehaviour {
                     if (succeed == false && onetime == true)
                     {
                         Debug.Log("Hee");
+=======
+                    }
+                    if (succeed == false&&onetime == true)
+                    {
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
                         theTextBox.ReloadScript(unsucceedText);
                         if (theTextBox.currentLine >= endLine || theTextBox.currentLine == 0)
                         {
@@ -105,12 +124,21 @@ public class ActivateTextAtLine : MonoBehaviour {
                         }
                         onetime = false;
                     }
+<<<<<<< HEAD
              } 
 
          }
     }
             
 }
+=======
+                    
+                }
+            }
+            
+          }
+        }
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 void OnTriggerEnter2D(Collider other)
 {
     onetime = true;
@@ -119,7 +147,11 @@ void OnTriggerEnter2D(Collider other)
         if (!requireButtonPress)
         {
             {
+<<<<<<< HEAD
                 theTextBox.ReloadScript(succeedText);
+=======
+                theTextBox.ReloadScript(unsucceedText);
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
                 theTextBox.currentLine = startLine;
                 theTextBox.endAtLine = endLine;
                 theTextBox.EnableTextBox();

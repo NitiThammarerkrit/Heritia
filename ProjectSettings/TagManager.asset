@@ -7,7 +7,10 @@ TagManager:
   - interObject
   - New Level
   - NPC
+<<<<<<< HEAD
   - Ground
+=======
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,11 @@ public class Inventory : MonoBehaviour {
             {
                 inventory[i] = item;
                 InventoryButtons[i].image.overrideSprite = item.GetComponent<SpriteRenderer>().sprite;
+<<<<<<< HEAD
                 Debug.Log(item.name + " was added");
+=======
+                Debug.Log(item.name + "was added");
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
                 itemAdded = true;
                 item.SendMessage("DoInteraction");
                 break;

@@ -32,15 +32,22 @@ public class Player : MonoBehaviour {
 	int wallDirX;
     public bool canmove = true;
 
+<<<<<<< HEAD
     Animator anim;
+=======
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 
 
     void Start() {
 		controller = GetComponent<Controller2D> ();
 
+<<<<<<< HEAD
         anim = GetComponent<Animator>();
 
         gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
+=======
+		gravity = -(2 * maxJumpHeight) / Mathf.Pow (timeToJumpApex, 2);
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
 		minJumpVelocity = Mathf.Sqrt (2 * Mathf.Abs (gravity) * minJumpHeight);
 	}
@@ -94,15 +101,23 @@ public class Player : MonoBehaviour {
 				velocity.y = maxJumpVelocity;
 			}
 		}
+<<<<<<< HEAD
         anim.SetBool("Isjump", true);
     }
+=======
+	}
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 
 	public void OnJumpInputUp() {
 		if (velocity.y > minJumpVelocity) {
 			velocity.y = minJumpVelocity;
 		}
+<<<<<<< HEAD
         //anim.SetBool("Isjump", false);
     }
+=======
+	}
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 		
 
 	void HandleWallSliding() {
@@ -139,6 +154,7 @@ public class Player : MonoBehaviour {
 		velocity.x = Mathf.SmoothDamp (velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below)?accelerationTimeGrounded:accelerationTimeAirborne);
 		velocity.y += gravity * Time.deltaTime;
 	}
+<<<<<<< HEAD
     void OnCollisionEnter2D(Collision2D hit)
     {
         if(hit.gameObject.tag == "Ground")
@@ -146,5 +162,7 @@ public class Player : MonoBehaviour {
             anim.SetBool("Isjump", false);
         }
     }
+=======
+>>>>>>> 755af25d6e09c252d2ae198862d68cb7802562ba
 
 }
