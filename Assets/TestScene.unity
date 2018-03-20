@@ -1080,7 +1080,7 @@ Prefab:
         type: 2}
       propertyPath: house
       value: 
-      objectReference: {fileID: 152630502}
+      objectReference: {fileID: 0}
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
       propertyPath: area
@@ -2365,51 +2365,6 @@ Prefab:
       propertyPath: InventoryButtons.Array.data[7]
       value: 
       objectReference: {fileID: 1911368536}
-    - target: {fileID: 114155049277669090, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: moveSpeed
-      value: 8.125
-      objectReference: {fileID: 0}
-    - target: {fileID: 212238796302018188, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114155049277669090, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: maxJumpHeight
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 95051567892455006, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 7.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_Offset.x
-      value: -0.04564476
-      objectReference: {fileID: 0}
-    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_Offset.y
-      value: -2.970213
-      objectReference: {fileID: 0}
-    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 0.8499553
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8817ec9e96f0ec74c928b608ab14b917, type: 2}
   m_IsPrefabParent: 0
@@ -2855,7 +2810,7 @@ Prefab:
         type: 2}
       propertyPath: house
       value: 
-      objectReference: {fileID: 152630502}
+      objectReference: {fileID: 0}
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
       propertyPath: area
@@ -3513,6 +3468,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
