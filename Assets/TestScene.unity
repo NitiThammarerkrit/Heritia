@@ -1070,7 +1070,7 @@ Prefab:
         type: 2}
       propertyPath: thePlayer
       value: 
-      objectReference: {fileID: 232051701}
+      objectReference: {fileID: 1476782238}
     - target: {fileID: 114787780906280772, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
       propertyPath: inventory
@@ -1084,7 +1084,7 @@ Prefab:
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
       propertyPath: area
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
@@ -1109,7 +1109,7 @@ Prefab:
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
       propertyPath: moveSpeed
-      value: 12
+      value: 8.55
       objectReference: {fileID: 0}
     - target: {fileID: 114046489939252294, guid: 80752d731bac871488e86bee1e8c4353,
         type: 2}
@@ -1173,6 +1173,26 @@ Prefab:
     - target: {fileID: 1819868594299378, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
       propertyPath: m_Name
       value: fruit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819868594299378, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212739232342205812, guid: 80752d731bac871488e86bee1e8c4353,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 803fd207e46ca8a428cd1e9ea54b66b8,
+        type: 3}
+    - target: {fileID: 61460418674063426, guid: 80752d731bac871488e86bee1e8c4353,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 0.07883382
+      objectReference: {fileID: 0}
+    - target: {fileID: 61460418674063426, guid: 80752d731bac871488e86bee1e8c4353,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 9.459005
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50024197231800578, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
@@ -1428,17 +1448,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1fdde5480696c4fa11c694bb6860c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1476782238}
   succeedText: {fileID: 4900000, guid: aa5552f0d8d020241ab36e765473a072, type: 3}
   unsucceedText: {fileID: 4900000, guid: 5e8a3b07239b1134484843f2c06f7060, type: 3}
+  FirstText: {fileID: 4900000, guid: 4e29b90d1d61cf84db9fd228fe5c0abd, type: 3}
   startLine: 0
-  endLine: 5
+  FirstTimeendLine: 5
+  unsucceedendLine: 1
+  succeedendLine: 5
   theTextBox: {fileID: 1559660723}
   destroyWhenActivate: 0
   requireButtonPress: 1
+  changeto: {fileID: 0}
   item: {fileID: 618806196}
   inventory: {fileID: 232051709}
   requiment: {fileID: 0}
-  give: 1
+  arrive: 0
 --- !u!1 &525414147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,7 +2987,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4739671515611018, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.62
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 4739671515611018, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3031,6 +3056,16 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 6.0783105
+      objectReference: {fileID: 0}
+    - target: {fileID: 212739232342205812, guid: 80752d731bac871488e86bee1e8c4353,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212881826255085610, guid: 80752d731bac871488e86bee1e8c4353,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50024197231800578, guid: 80752d731bac871488e86bee1e8c4353, type: 2}
@@ -3743,7 +3778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1213849169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4038,17 +4073,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1fdde5480696c4fa11c694bb6860c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: {fileID: 1443281153}
   succeedText: {fileID: 4900000, guid: 3bb99204c8b157f46a59eed8eed83add, type: 3}
   unsucceedText: {fileID: 4900000, guid: 49e9509fed00b7541bb3e716322b2fb4, type: 3}
+  FirstText: {fileID: 4900000, guid: 287dfb4e6368f144abc3ebfa1b4cedc2, type: 3}
   startLine: 0
-  endLine: 5
+  FirstTimeendLine: 8
+  unsucceedendLine: 0
+  succeedendLine: 13
   theTextBox: {fileID: 27282636}
   destroyWhenActivate: 0
   requireButtonPress: 1
+  changeto: {fileID: 21300000, guid: 9f29c1a65837fb642be36c25d16a0bef, type: 3}
   item: {fileID: 2022294317}
   inventory: {fileID: 232051709}
   requiment: {fileID: 618806196}
-  give: 0
+  arrive: 0
 --- !u!1 &1361070027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4186,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!4 &1443281158 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4038909919915948, guid: 80752d731bac871488e86bee1e8c4353,

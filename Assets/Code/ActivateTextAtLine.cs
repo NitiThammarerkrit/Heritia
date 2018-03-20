@@ -4,31 +4,45 @@ using UnityEngine;
 
 public class ActivateTextAtLine : MonoBehaviour {
 
-
+    public GameObject character; 
     public TextAsset succeedText;
     public TextAsset unsucceedText;
+    public TextAsset FirstText;
 
     public int startLine;
-    public int endLine;
+    public int FirstTimeendLine;
+    public int unsucceedendLine;
+    public int succeedendLine;
 
     public TextBoxmanager theTextBox;
 
     public bool destroyWhenActivate;
     public bool requireButtonPress;
     private bool waitForPress;
-
+    public Sprite changeto;
 
     public GameObject item;
     public Inventory inventory;
     public GameObject requiment;
+    public bool arrive = false;
     bool firsttime = true;
     bool succeed = false;
     bool onetime = true;
-    public bool give ;
+    bool FirstTime;
+    bool inconver=true;
     // Use this for initialization
     void Start () {
         //theTextBox = FindObjectOfType<TextBoxmanager>();
         //succeed = false;
+        if (character.gameObject.name == "BUTCHER")
+        {
+            FirstTime = false;
+        }
+        else
+        {
+            FirstTime = true;
+        }
+
     }
 	
 	// Update is called once per frame
@@ -39,89 +53,133 @@ public class ActivateTextAtLine : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.name == "Player")
+        if (other.name == "Player")
         {
-            if(requireButtonPress)
+            if (requireButtonPress && inconver)
             {
-                if(Input.GetKeyDown(KeyCode.Z))
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
                     for (int i = 0; i < inventory.inventory.Length; i++)
                     {
-                        if ((inventory.inventory[i] == requiment) && !give)
+                        if (requiment != null && (inventory.inventory[i] == requiment))
                         {
                             Debug.Log("kuay5");
-                            inventory.RemoveItemfrominventory(inventory.inventory[i]);
-                            inventory.AddItem(item);
-                            Destroy(item);
                             succeed = true;
+                            inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                            //inventory.AddItem(item);
+                            //Destroy(item);
                             theTextBox.ReloadScript(succeedText);
-                            if (theTextBox.currentLine >= endLine || theTextBox.currentLine == 0)
+                            if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                             {
                                 theTextBox.currentLine = startLine;
                             }
-                            theTextBox.endAtLine = endLine;
+                            theTextBox.endAtLine = succeedendLine;
                             theTextBox.EnableTextBox();
-                            /* if (destroyWhenActivate)
+                            if (destroyWhenActivate)
                              {
                                  Destroy(gameObject);
-                             }*/
+                             }
                             break;
                         }
-                        if ((inventory.inventory[i] == requiment||requiment == null) && give )
+                        
+                        if ((inventory.inventory[i] == requiment || requiment == null) && FirstTime)
                         {
                             //Debug.Log("succeeddddddddd");
                             Debug.Log("kuay1");
                             inventory.AddItem(item);
                             item.SetActive(false);
-                            theTextBox.ReloadScript(unsucceedText);
-                            if (theTextBox.currentLine >= endLine || theTextBox.currentLine == 0)
+                            theTextBox.ReloadScript(FirstText);
+                            if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
                             {
                                 theTextBox.currentLine = startLine;
                             }
-                            theTextBox.endAtLine = endLine;
+                            theTextBox.endAtLine = FirstTimeendLine;
                             theTextBox.EnableTextBox();
                             if (destroyWhenActivate)
                             {
                                 Destroy(gameObject);
                             }
-                            give = false;
+                            FirstTime = false;
                             break;
                         }
-                       
-                    }
-                    if (succeed == false && onetime == true)
-                    {
-                        Debug.Log("Hee");
-                        theTextBox.ReloadScript(unsucceedText);
-                        if (theTextBox.currentLine >= endLine || theTextBox.currentLine == 0)
+                        
+                        if (requiment == null && !FirstTime && onetime == true && (character.gameObject.name != "BUTCHER"))
                         {
-                            theTextBox.currentLine = startLine;
+                            Debug.Log("succeeddddddddd");
+                            theTextBox.ReloadScript(unsucceedText);
+                            if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                            {
+                                theTextBox.currentLine = startLine;
+                            }
+                            theTextBox.endAtLine = unsucceedendLine;
+                            theTextBox.EnableTextBox();
+                            if (destroyWhenActivate)
+                            {
+                                Destroy(gameObject);
+                            }
+                            onetime = false;
+                            break;
                         }
-                        theTextBox.endAtLine = endLine;
-                        theTextBox.EnableTextBox();
-                        if (destroyWhenActivate)
-                        {
-                            Destroy(gameObject);
-                        }
-                        onetime = false;
-                    }
-             } 
 
-         }
+                        if (onetime == true)
+                        {
+                            //succeed = true;
+                            if(succeed == false)
+                            {
+                                Debug.Log("Hee");
+                                theTextBox.ReloadScript(unsucceedText);
+                                if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                                {
+                                    theTextBox.currentLine = startLine;
+                                }
+                                theTextBox.endAtLine = unsucceedendLine;
+                                theTextBox.EnableTextBox();
+                                if (destroyWhenActivate)
+                                {
+                                    Destroy(gameObject);
+                                }
+                                onetime = false;
+                                break;
+                            }
+                            
+                        }
+                        
+                        if (succeed == true && character.gameObject.name == "BUTCHER" && onetime == true && arrive)
+                        {
+                            Debug.Log("sasssss");
+                            theTextBox.ReloadScript(FirstText);
+                            if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
+                            {
+                                theTextBox.currentLine = startLine;
+                            }
+                            theTextBox.endAtLine = FirstTimeendLine;
+                            theTextBox.EnableTextBox();
+                            if (destroyWhenActivate)
+                            {
+                                Destroy(gameObject);
+                            }
+                            onetime = false;
+                            break;
+                        }
+                    }
+                    inconver = false;
+                }
+            }
+        }
+
     }
-            
-}
 void OnTriggerEnter2D(Collider other)
 {
     onetime = true;
+        inconver = true;
     if (other.name == "Player")
     {
         if (!requireButtonPress)
         {
             {
-                theTextBox.ReloadScript(succeedText);
+                theTextBox.ReloadScript(unsucceedText);
                 theTextBox.currentLine = startLine;
-                theTextBox.endAtLine = endLine;
+                theTextBox.endAtLine = unsucceedendLine;
                 theTextBox.EnableTextBox();
                 if (destroyWhenActivate)
                 {
@@ -133,7 +191,13 @@ void OnTriggerEnter2D(Collider other)
 }
     void OnTriggerExit2D(Collider2D other)
     {
+        if (succeed)
+        {
+            character.GetComponent<EnemyController>().enabled = true;
+            character.GetComponent<SpriteRenderer>().sprite = changeto;
+        }
         onetime = true;
+        inconver = true;
         if (other.name == "Player")
         {
             waitForPress = false;

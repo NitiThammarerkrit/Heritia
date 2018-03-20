@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D myRB;
     public float moveSpeed;
     public float area;
-    public Player thePlayer;
+    public GameObject thePlayer;
     private Vector3 thisPos;
     private Vector3 playerPos;
     private float playerdistance;
@@ -16,7 +16,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
-        thePlayer = FindObjectOfType<Player>();
+       // thePlayer = FindObjectOfType<Player>();
     }
 
     void FixedUpdate()
@@ -28,13 +28,20 @@ public class EnemyController : MonoBehaviour
         playerPos = thePlayer.GetComponent<Transform>().position;
         thisPos = this.transform.position;
         playerdistance = Vector3.Distance(thisPos, playerPos);
+        
         float xx = Mathf.Pow((playerPos.x - thisPos.x), 2);
         float yy = Mathf.Pow((playerPos.y - thisPos.y), 2);
        // float zz = Mathf.Pow((playerPos.z - thisPos.z), 2);
-        if (Mathf.Sqrt(xx + yy) < area)
+        if (Mathf.Sqrt(xx + yy) < area && Mathf.Sqrt(xx + yy) > 6)
         {
             this.transform.LookAt(thePlayer.transform.position);
             myRB.velocity = new Vector3(this.transform.forward.x * moveSpeed,-2.0f, 0);
+            this.transform.rotation = Quaternion.Euler(0, -188, 0);
+        }
+        else
+        if(Mathf.Sqrt(xx + yy) < 6.5)
+        {
+            this.GetComponentInChildren<ActivateTextAtLine>().arrive = true;
         }
         if (myRB.velocity.x < 0 && left == false)
         {
@@ -43,13 +50,13 @@ public class EnemyController : MonoBehaviour
             right = false;
             firstmove = false;
         }
-        else
+        /*else
             if (myRB.velocity.x > 0 && right == false && firstmove == false)
         {
             Flip();
             left = false;
             right = true;
-        }
+        }*/
     }
 
     private void Flip()

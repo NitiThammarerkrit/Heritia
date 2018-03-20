@@ -325,10 +325,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+    <None Include="Assets\Text\Ama First.txt" />
     <None Include="Assets\Text\Ama suc.txt" />
     <None Include="Assets\Text\Ama un.txt" />
+    <None Include="Assets\Text\ButcherFirst.txt" />
     <None Include="Assets\Text\Butchersuc.txt" />
     <None Include="Assets\Text\Butcherun.txt" />
+    <None Include="Assets\Text\NPC1.txt" />
+    <None Include="Assets\Text\NPC2.txt" />
+    <None Include="Assets\Text\NPC3.txt" />
+    <None Include="Assets\Text\NPC4.txt" />
+    <None Include="Assets\Text\NPC5.txt" />
+    <None Include="Assets\Text\NPC6.txt" />
+    <None Include="Assets\Text\NPC7.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
