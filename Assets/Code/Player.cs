@@ -145,6 +145,14 @@ public class Player : MonoBehaviour {
         {
             anim.SetBool("Isjump", false);
         }
+
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            this.velocity.x = 0;
+        }
     }
 
 }

@@ -11,7 +11,7 @@ public class CameraFollow : MonoBehaviour {
 	public Vector2 focusAreaSize;
 
 	FocusArea focusArea;
-
+    
 	float currentLookAheadX;
 	float targetLookAheadX;
 	float lookAheadDirX;
@@ -23,8 +23,24 @@ public class CameraFollow : MonoBehaviour {
 	void Start() {
 		focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
 	}
+    void Update()
+    {
+        if(this.transform.position.x <= 2.5f)
+        {
+            this.GetComponent<CameraFollowN>().enabled = true;
+            this.GetComponent<CameraFollow>().enabled = false;
+            CameraFollowN.m = true;
+        }
+        else
+        if(this.transform.position.x >=170)
+        {
+            this.GetComponent<CameraFollowN>().enabled = true;
+            this.GetComponent<CameraFollow>().enabled = false;
+            CameraFollowN.m = false;
+        }
+    }
 
-	void LateUpdate() {
+    void LateUpdate() {
 		focusArea.Update (target.collider.bounds);
 
 		Vector2 focusPosition = focusArea.centre + Vector2.up * verticalOffset;
@@ -48,7 +64,8 @@ public class CameraFollow : MonoBehaviour {
 
 		focusPosition.y = Mathf.SmoothDamp (transform.position.y, focusPosition.y, ref smoothVelocityY, verticalSmoothTime);
 		focusPosition += Vector2.right * currentLookAheadX;
-		transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+        transform.position = (Vector3)focusPosition + Vector3.forward * -10;
+
 	}
 
 	void OnDrawGizmos() {
