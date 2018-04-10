@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class TextBoxmanager : MonoBehaviour {
 
     public GameObject textBox;
 
     public Text theText;
+    private string [] theTexttemp;
+    private string[] theTextLinestemp;
 
     public TextAsset textfile;
     public string[] textLines;
@@ -22,7 +25,7 @@ public class TextBoxmanager : MonoBehaviour {
     private bool isTyping = false;
     private bool cancelTyping = false;
 
-    public float typeSpeed;
+    public float typeSpeed = 0;
     // Use this for initialization
     public void ReloadScript(TextAsset theText)
     {
@@ -31,10 +34,17 @@ public class TextBoxmanager : MonoBehaviour {
            // textfile = theText;
             textLines = new string[1];
             textLines = (theText.text.Split('\n'));
+            /*Debug.Log("text temp 1"+ textLines[0]);
+            Debug.Log("text temp 2" + textLines[1]);
+            theTexttemp = (textLines[j].Split(':'));
+            typeSpeed = float.Parse(theTexttemp[i]);
+            Debug.Log(typeSpeed);
+            j++;
+            i += 2;*/
+            // theTexttemp = theText;  
         }
     }
     void Start () {
-
         if (isActive)
         {
             EnableTextBox();
@@ -46,7 +56,14 @@ public class TextBoxmanager : MonoBehaviour {
         player = FindObjectOfType<Player>();
         if (textfile != null)
         {
-            textLines = (textfile.text.Split('\n'));
+            //typeSpeed = (float)Convert.ToDouble(theText.text.Split(':'));
+            textLines = new string[1];
+            textLines = (theText.text.Split('\n'));
+           /* Debug.Log("text 1 " + textLines[0]);
+            Debug.Log("text 2 " + textLines[1]);
+            theTexttemp = (textLines[j].Split(':'));
+            typeSpeed = float.Parse(theTexttemp[i]);
+            Debug.Log(typeSpeed);*/
         }
 
         if (endAtLine == 0)
@@ -58,7 +75,10 @@ public class TextBoxmanager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        /*if (currentLine >= endAtLine)
+        {
+            i = 0;
+        }*/
 
         if (!isActive)
         {
@@ -94,15 +114,24 @@ public class TextBoxmanager : MonoBehaviour {
         theText.text = "";
         isTyping = true;
         cancelTyping = false;
-        while(isTyping && !cancelTyping && letter < lineOfText.Length - 1)
+        theTextLinestemp = new string[1];
+        theTextLinestemp = lineOfText.Split(':');
+        while (isTyping && !cancelTyping && letter < lineOfText.Length - theTextLinestemp[0].Length - 1)
         {
-            theText.text += lineOfText[letter];
-            letter += 1;
+            // Debug.Log(lineOfText.Length);
+            //Debug.Log(i);
+            string temptext = theTextLinestemp[1];
+            typeSpeed = float.Parse(theTextLinestemp[0]); 
+            Debug.Log("typeSpeed" + typeSpeed);
             yield return new WaitForSeconds(typeSpeed);
+            theText.text += temptext[letter];
+            if(letter < lineOfText.Length)
+            letter += 1;
         }
-        theText.text = lineOfText;
+          // i += 1;
+       // theText.text = lineOfText;
         isTyping = false;
-        //cancelTyping = false;
+        //cancelTyping = false;*/
     }
 
     public void EnableTextBox()
