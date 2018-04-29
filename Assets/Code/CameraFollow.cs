@@ -21,10 +21,12 @@ public class CameraFollow : MonoBehaviour {
 	bool lookAheadStopped;
 
 	void Start() {
-		focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
+        target = GameObject.FindWithTag("Player").GetComponent<Controller2D>();
+        focusArea = new FocusArea (target.collider.bounds, focusAreaSize);
 	}
     void Update()
     {
+        target = GameObject.FindWithTag("Player").GetComponent<Controller2D>();
         if(this.transform.position.x <= 2.5f)
         {
             this.GetComponent<CameraFollowN>().enabled = true;

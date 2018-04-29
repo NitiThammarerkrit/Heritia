@@ -309,10 +309,13 @@
     <Compile Include="Assets\Code\Player.cs" />
     <Compile Include="Assets\Code\PlayerInput.cs" />
     <Compile Include="Assets\Code\PlayerInteraction.cs" />
+    <Compile Include="Assets\Code\PlayerProfileSystem.cs" />
     <Compile Include="Assets\Code\RaycastController.cs" />
     <Compile Include="Assets\Code\SkyRandom.cs" />
     <Compile Include="Assets\Code\TextBoxmanager.cs" />
     <Compile Include="Assets\Code\TextImporter.cs" />
+    <Compile Include="Assets\Code\TransitionController.cs" />
+    <Compile Include="Assets\Code\WarpGate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Font\PLEASE-README.txt" />
