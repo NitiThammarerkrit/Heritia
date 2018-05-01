@@ -11,6 +11,7 @@ public class CameraFollowN : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        T = GameObject.FindWithTag("Player");
         Vector3 targetPosition = T.transform.position;
         Vector3 cameraPosition = cam.transform.position;
         

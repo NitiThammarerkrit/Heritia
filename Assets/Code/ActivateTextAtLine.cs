@@ -127,8 +127,6 @@ public class ActivateTextAtLine : MonoBehaviour {
                         
                         if ((inventory.inventory[i] == requiment || requiment == null) && FirstTime)
                         {
-                            //Debug.Log("succeeddddddddd");
-                            Debug.Log("kuay1");
                             if(item!=null)
                             {
                                 inventory.AddItem(item);
@@ -194,7 +192,7 @@ public class ActivateTextAtLine : MonoBehaviour {
                         
                         if (succeed == true  && onetime == true && arrive &&!finish)
                         {
-                            Debug.Log("sasssss");
+                            GameData.events_complete[1] = true;
                             theTextBox.ReloadScript(FirstText);
                             if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
                             {

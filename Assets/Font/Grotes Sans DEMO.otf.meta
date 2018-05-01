@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: cf3ce89de442ac5488624a980a7289cf
+timeCreated: 1523435877
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Grotes Sans DEMO
+  fontNames:
+  - Grotes Sans DEMO
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0591af433167bcf489f506c74bcdc46f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
