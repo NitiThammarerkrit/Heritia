@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Ground
   - Wall
+  - Panel
   layers:
   - Default
   - TransparentFX
