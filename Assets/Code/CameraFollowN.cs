@@ -7,9 +7,20 @@ public class CameraFollowN : MonoBehaviour {
     public GameObject cam;
     public GameObject T;
     public static bool m ;
-    
-	
-	// Update is called once per frame
+
+    public float[] rightrim;
+
+    void Start()
+    {
+        rightrim[0] = 3.0f;
+        rightrim[1] = 170.0f;
+        rightrim[2] = 170.0f;
+        rightrim[3] = 170.0f;
+        rightrim[4] = 170.0f;
+        rightrim[5] = 100.0f;
+    }
+
+    // Update is called once per frame
 	void Update () {
         T = GameObject.FindWithTag("Player");
         Vector3 targetPosition = T.transform.position;
@@ -26,7 +37,8 @@ public class CameraFollowN : MonoBehaviour {
 			cam.transform.position = new Vector3(170, cam.transform.position.y, cam.transform.position.z);
             m = true;
 		}
-        if (this.transform.position.x > 2.5f && this.transform.position.x < 170)
+
+        if (this.transform.position.x > 2.5f && this.transform.position.x < rightrim[5])
         {
             this.GetComponent<CameraFollow>().enabled = true;
             this.GetComponent<CameraFollowN>().enabled = false;
