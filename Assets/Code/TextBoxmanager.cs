@@ -25,6 +25,8 @@ public class TextBoxmanager : MonoBehaviour {
     private bool isTyping = false;
     private bool cancelTyping = false;
 
+    public bool issucceed = false;
+    public int number;
     public float typeSpeed = 0;
     // Use this for initialization
     public void ReloadScript(TextAsset theText)
@@ -45,6 +47,7 @@ public class TextBoxmanager : MonoBehaviour {
         }
     }
     void Start () {
+        player = FindObjectOfType<Player>();
         if (isActive)
         {
             EnableTextBox();
@@ -118,11 +121,11 @@ public class TextBoxmanager : MonoBehaviour {
         theTextLinestemp = lineOfText.Split(':');
         while (isTyping && !cancelTyping && letter < lineOfText.Length - theTextLinestemp[0].Length - 1)
         {
-            // Debug.Log(lineOfText.Length);
+           // Debug.Log(lineOfText.Length);
             //Debug.Log(i);
             string temptext = theTextLinestemp[1];
             typeSpeed = float.Parse(theTextLinestemp[0]); 
-            Debug.Log("typeSpeed" + typeSpeed);
+           // Debug.Log("typeSpeed" + typeSpeed);
             yield return new WaitForSeconds(typeSpeed);
             theText.text += temptext[letter];
             if(letter < lineOfText.Length)
@@ -138,11 +141,7 @@ public class TextBoxmanager : MonoBehaviour {
     {
         textBox.SetActive(true);
         isActive = true;
-        if(StopPlayerMovement)
-        {
-            player.canmove = false;
-        }
-
+        player.canmove = false;
         StartCoroutine(TextScroll(textLines[currentLine]));
     }
 
@@ -151,6 +150,12 @@ public class TextBoxmanager : MonoBehaviour {
         isActive = false;
         textBox.SetActive(false);
         player.canmove = true;
+        if (issucceed && currentLine > endAtLine)
+        {
+            GameData.events_complete[number] = true;
+            issucceed = false;
+            SaveLoad.Save();
+        }
     }
 
    

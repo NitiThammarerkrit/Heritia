@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heritia", "Heritia.csproj", "{95D54E36-D1B3-4148-5D17-2A8FF2D044D1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heritia.Plugins", "Heritia.Plugins.csproj", "{6B1F9B8D-36FA-16E8-3F78-7319E7D7BD2F}"

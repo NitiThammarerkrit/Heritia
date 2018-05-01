@@ -29,8 +29,8 @@ public class PlayerInteraction : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-		
-	}
+        inventory = FindObjectOfType<Inventory>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

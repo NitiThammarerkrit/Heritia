@@ -91,7 +91,7 @@ public class ActivateTextAtLine : MonoBehaviour {
             succeed = true;
             arrive = true;
         }
-        if (other.name == "Player")
+        if (other.tag == "Player")
         {
             if (requireButtonPress && inconver)
             {
@@ -106,8 +106,6 @@ public class ActivateTextAtLine : MonoBehaviour {
                                 Debug.Log("kuay5");
                                 succeed = true;
                                 inventory.RemoveItemfrominventory(inventory.inventory[j]);
-                                //inventory.AddItem(item);
-                                //Destroy(item);
                                 theTextBox.ReloadScript(succeedText);
                                 if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                                 {
