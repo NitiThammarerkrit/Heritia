@@ -26,6 +26,7 @@ public class CameraFollow : MonoBehaviour {
 	}
     void Update()
     {
+
         target = GameObject.FindWithTag("Player").GetComponent<Controller2D>();
         if(this.transform.position.x <= 2.5f)
         {
@@ -34,7 +35,7 @@ public class CameraFollow : MonoBehaviour {
             CameraFollowN.m = true;
         }
         else
-        if(this.transform.position.x >=170)
+        if(this.transform.position.x >= CameraFollowN.rightrim[Application.loadedLevel])
         {
             this.GetComponent<CameraFollowN>().enabled = true;
             this.GetComponent<CameraFollow>().enabled = false;
