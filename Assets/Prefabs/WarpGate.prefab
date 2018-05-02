@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4904173491909376}
   - component: {fileID: 61437987220757242}
   - component: {fileID: 114857072796373122}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WarpGate
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1537565545701082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.92, y: -5.3, z: 0}
+  m_LocalPosition: {x: 119.99, y: -5.3, z: 0}
   m_LocalScale: {x: 3.4618745, y: 2.6414733, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,4 +77,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e025e541ae5eea48a91ca00eeeb6c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEnterFromRight: 1
+  isEnterFromRight: 0

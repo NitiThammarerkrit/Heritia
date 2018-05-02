@@ -2608,6 +2608,16 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0.2141608
+      objectReference: {fileID: 0}
+    - target: {fileID: 61418480187374380, guid: 8817ec9e96f0ec74c928b608ab14b917,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 7.061886
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8817ec9e96f0ec74c928b608ab14b917, type: 2}
   m_IsPrefabParent: 0
@@ -4109,6 +4119,7 @@ MonoBehaviour:
   changeto: {fileID: 0}
   canvas: {fileID: 0}
   item: {fileID: 0}
+  gem: {fileID: 0}
   inventory: {fileID: 0}
   requiment: {fileID: 0}
 --- !u!61 &938225910
@@ -5082,7 +5093,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023634434, y: 0.22206378}
+  m_Offset: {x: -0.30546308, y: 0.22206402}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5093,7 +5104,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5866003, y: 11.791288}
+  m_Size: {x: 11.283676, y: 11.791288}
   m_EdgeRadius: 0
 --- !u!114 &1053009721
 MonoBehaviour:
@@ -5594,6 +5605,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

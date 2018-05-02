@@ -1512,11 +1512,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 114857072796373122, guid: 0b8b7e76108d28a4cbc7e18ccb474a17,
-        type: 2}
-      propertyPath: isEnterFromRight
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0b8b7e76108d28a4cbc7e18ccb474a17, type: 2}
   m_IsPrefabParent: 0
@@ -3039,6 +3034,7 @@ MonoBehaviour:
   changeto: {fileID: 0}
   canvas: {fileID: 0}
   item: {fileID: 0}
+  gem: {fileID: 0}
   inventory: {fileID: 0}
   requiment: {fileID: 0}
 --- !u!61 &503061637
@@ -6228,6 +6224,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -10237,7 +10234,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3313284, y: 3.4804916}
+  m_Offset: {x: -0.3313284, y: 2.3664398}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10248,7 +10245,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.81036, y: 5.274433}
+  m_Size: {x: 14.81036, y: 7.502537}
   m_EdgeRadius: 0
 --- !u!114 &2054471962
 MonoBehaviour:
@@ -10318,8 +10315,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2054471959}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.25, y: -2.84, z: -3.0079}
-  m_LocalScale: {x: 0.48933816, y: 0.4893381, z: 0.4893381}
+  m_LocalPosition: {x: 7.48, y: -3.2, z: -3.0079}
+  m_LocalScale: {x: 0.14033994, y: 0.14033993, z: 0.14033993}
   m_Children:
   - {fileID: 503061635}
   - {fileID: 517838314}

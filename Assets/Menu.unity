@@ -844,6 +844,7 @@ GameObject:
   - component: {fileID: 676357671}
   - component: {fileID: 676357673}
   - component: {fileID: 676357672}
+  - component: {fileID: 676357674}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -902,6 +903,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 676357670}
+--- !u!114 &676357674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 676357670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b294b309712cc4693fc9291daea0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg:
+  - {fileID: 21300000, guid: 62bfdfaadf6ed6f41b5f02fe29658d4f, type: 3}
+  - {fileID: 21300000, guid: 8e32d8475a065ad4292aca3df6524010, type: 3}
+  - {fileID: 21300000, guid: a9972d6fd3d04fd45af352204f4faf05, type: 3}
 --- !u!1 &876036677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1178,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

@@ -1055,7 +1055,7 @@ Prefab:
     - target: {fileID: 114471561920736458, guid: 87d2d17b69cbdc54f9658708680982a7,
         type: 2}
       propertyPath: m_Text
-      value: Farmer
+      value: Lumberjeck
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d2d17b69cbdc54f9658708680982a7, type: 2}
@@ -1642,6 +1642,7 @@ MonoBehaviour:
   changeto: {fileID: 0}
   canvas: {fileID: 0}
   item: {fileID: 0}
+  gem: {fileID: 0}
   inventory: {fileID: 0}
   requiment: {fileID: 0}
 --- !u!61 &262387902
@@ -5951,6 +5952,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -7058,7 +7060,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023634434, y: 0.033682823}
+  m_Offset: {x: 0.07016635, y: 0.033682823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7069,7 +7071,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5866003, y: 12.168051}
+  m_Size: {x: 10.713917, y: 12.168051}
   m_EdgeRadius: 0
 --- !u!114 &1345875179
 MonoBehaviour:
@@ -7418,7 +7420,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023634434, y: 0.033682823}
+  m_Offset: {x: -0.6567993, y: 0.033682823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -7429,7 +7431,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5866003, y: 12.168051}
+  m_Size: {x: 12.261633, y: 12.168051}
   m_EdgeRadius: 0
 --- !u!114 &1414414840
 MonoBehaviour:
@@ -8261,7 +8263,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023634434, y: 0.033682823}
+  m_Offset: {x: 0.16394687, y: 0.033682823}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8272,7 +8274,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.5866003, y: 12.168051}
+  m_Size: {x: 11.27673, y: 12.168051}
   m_EdgeRadius: 0
 --- !u!114 &1562242743
 MonoBehaviour:
@@ -9421,7 +9423,7 @@ Prefab:
     - target: {fileID: 114471561920736458, guid: 87d2d17b69cbdc54f9658708680982a7,
         type: 2}
       propertyPath: m_Text
-      value: Farmer
+      value: Anna
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87d2d17b69cbdc54f9658708680982a7, type: 2}
@@ -10235,6 +10237,7 @@ MonoBehaviour:
   changeto: {fileID: 0}
   canvas: {fileID: 0}
   item: {fileID: 0}
+  gem: {fileID: 0}
   inventory: {fileID: 0}
   requiment: {fileID: 0}
 --- !u!61 &1997994843
@@ -10350,6 +10353,7 @@ MonoBehaviour:
   changeto: {fileID: 0}
   canvas: {fileID: 0}
   item: {fileID: 0}
+  gem: {fileID: 0}
   inventory: {fileID: 0}
   requiment: {fileID: 0}
 --- !u!61 &2022292285
