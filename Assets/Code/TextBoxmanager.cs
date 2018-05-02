@@ -154,6 +154,8 @@ public class TextBoxmanager : MonoBehaviour {
         {
             GameData.events_complete[number] = true;
             issucceed = false;
+            GameObject.FindGameObjectWithTag("Fade").GetComponent<Fade>().Fades(true, 2.0f);
+            GameObject.FindGameObjectWithTag("Fade").GetComponent<Fade>().Fades(false, 2.0f);
             SaveLoad.Save();
         }
     }

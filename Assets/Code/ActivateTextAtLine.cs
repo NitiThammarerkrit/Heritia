@@ -246,7 +246,6 @@ public class ActivateTextAtLine : MonoBehaviour {
             }
            
         }
-
     }
     void OnTriggerEnter2D(Collider other)
 {

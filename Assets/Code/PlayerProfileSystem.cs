@@ -11,7 +11,7 @@ public class GameData
     public static int current_scene;
     public static int previous_scene;
     public static bool[] events_complete = new bool [100];
-    public static bool[] gems_receive;
+    public static bool[] gems_receive = new bool [100];
     public static GameObject[] items = new GameObject[8];
 }
 
