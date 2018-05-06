@@ -302,6 +302,7 @@
     <Compile Include="Assets\Code\Controller2D.cs" />
     <Compile Include="Assets\Code\DialogHolder.cs" />
     <Compile Include="Assets\Code\DialogueManager.cs" />
+    <Compile Include="Assets\Code\Door.cs" />
     <Compile Include="Assets\Code\EnemyController.cs" />
     <Compile Include="Assets\Code\esc.cs" />
     <Compile Include="Assets\Code\Fade.cs" />

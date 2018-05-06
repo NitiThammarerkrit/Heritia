@@ -64,7 +64,7 @@ public class Check : MonoBehaviour {
             }
             else if (GameData.events_complete[2] == false)
             {
-                Hunter.transform.position = new Vector3(30, -1.83f, -3);
+                Hunter.transform.position = new Vector3(120, -1.83f, -3);
             }
         }
         if(GameData.events_complete[3] == true)
