@@ -14,18 +14,30 @@ public class Inventory : MonoBehaviour {
         bool itemAdded = false;
         for(int i = 0; i<inventory.Length;i++)
         {
+            if(inventory[i]==item)
+            {
+                break;
+            }
             if(inventory[i]==null)
             {
+                Debug.Log(item.name);
                 inventory[i] = item;
+                GameData.items[i] = item.name;
                 InventoryButtons[i].image.overrideSprite = inventory[i].GetComponent<SpriteRenderer>().sprite;
                 Debug.Log(item.name + " was added");
                 itemAdded = true;
                 item.SendMessage("DoInteraction");
-                //GameData.items[i] = item;
-                //SaveLoad.Save();
+                SaveLoad.Save();
+                /*if (onetime)
+                {
+                    GameData.items[i] = item.name;
+                    SaveLoad.Save();
+                    onetime = false;
+                }*/
                 break;
             }   
         }
+        //SaveLoad.Save();
         if (!itemAdded)
         {
             Debug.Log("inventory Full - Item cannot be added");

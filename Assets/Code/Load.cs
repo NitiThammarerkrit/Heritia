@@ -8,11 +8,13 @@ public class Load : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        cutscene.SetActive(false);
+        if (cutscene != null)
+            cutscene.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if(cutscene != null)
 		if (cutscene.activeSelf == true)
         {
             if (Input.GetKey("z") || Input.GetKey("space"))
@@ -20,16 +22,23 @@ public class Load : MonoBehaviour {
                 Application.LoadLevel(1);
             }
         }
+        else
+        {
+
+        }
 	}
     public void NewGame()
     {
         cutscene.SetActive(true);
-
+        Time.timeScale = 1;
         GameData.current_scene = 1;
         GameData.previous_scene = 1;
-        for (int i = 0; i < GameData.events_complete.Length; i++) GameData.events_complete[i] = false;
-        SaveLoad.Save();
-        for (int i = 0; i < GameData.gems_receive.Length; i++) GameData.gems_receive[i] = false;
+        for (int i = 0; i < 8; i++)
+        {
+            GameData.events_complete[i] = false;
+            GameData.gems_receive = 0;
+            GameData.items[i] = null;
+        }   
         SaveLoad.Save();
         StartCoroutine(DelayBeforeGo());
     }
@@ -37,11 +46,11 @@ public class Load : MonoBehaviour {
     {
         Application.LoadLevel(GameData.current_scene);
         SaveLoad.Load();
-        
     }
     public void Loadscene(string map)
     {
         Application.LoadLevel(map);
+        SaveLoad.Save();
     }
     public void Savelv()
     {

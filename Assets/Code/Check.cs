@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Check : MonoBehaviour {
 
@@ -18,19 +19,42 @@ public class Check : MonoBehaviour {
     public Sprite Dog2Befores;
     public Sprite Dog1After;
     public Sprite Dog2After;
+    public GameObject Hunterbefore;
+    public GameObject HunterAfter;
+
+    public GameObject CAT;
+    public Sprite cat0;
+    public Sprite cat1;
+    public Sprite cat2;
+    public Sprite cat3;
     // Use this for initialization
     void Start () {
-        SaveLoad.Load();
+        GameData.current_scene = SceneManager.GetActiveScene().buildIndex;
         FindObjectOfType<Player>().canmove = true;
         for (int i = 0; i < 8; i++)
         {
-            inventory.inventory[i] = GameData.items[i];
-            inventory.InventoryButtons[i].image.overrideSprite = GameData.items[i].GetComponent<SpriteRenderer>().sprite;
+            SaveLoad.Load();
+            if (GameData.items[i] != null)
+            {
+                Debug.Log(GameData.items[i]);
+                inventory.inventory[i] = GameObject.Find(GameData.items[i]);
+                inventory.InventoryButtons[i].image.overrideSprite = GameObject.Find(GameData.items[i]).GetComponent<SpriteRenderer>().sprite;
+            }    
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
+        for (int i = 0; i < 8; i++)
+        {
+            if(GameData.items[i]!=null)
+            {
+                Debug.Log(GameData.items[i]);
+                inventory.inventory[i] = GameObject.Find(GameData.items[i]);
+                inventory.InventoryButtons[i].image.overrideSprite = GameObject.Find(GameData.items[i]).GetComponent<SpriteRenderer>().sprite;
+            }
+
+        }
         if (ButcherBefore != null)
         {
             if (GameData.events_complete[0] == true)
@@ -60,11 +84,17 @@ public class Check : MonoBehaviour {
         {
             if (GameData.events_complete[2] == true)
             {
-                Hunter.transform.position = new Vector3(82, -1.83f, -3);
+                if (HunterAfter != null)
+                    HunterAfter.SetActive(true);
+                if (Hunterbefore != null)
+                    Hunterbefore.SetActive(false); 
             }
             else if (GameData.events_complete[2] == false)
             {
-                Hunter.transform.position = new Vector3(120, -1.83f, -3);
+                if (HunterAfter != null)
+                    HunterAfter.SetActive(false);
+                if (Hunterbefore != null)
+                    Hunterbefore.SetActive(true);
             }
         }
         if(GameData.events_complete[3] == true)
@@ -81,7 +111,33 @@ public class Check : MonoBehaviour {
             if (ChiefBeach != null)
             ChiefBeach.SetActive(true);
         }
-        
+        if(CAT!=null)
+        {
+            if(GameData.gems_receive==0)
+            {
+                CAT.GetComponent<SpriteRenderer>().sprite = cat0;
+            }
+            else
+            if (GameData.gems_receive == 1)
+            {
+                CAT.GetComponent<SpriteRenderer>().sprite = cat1;
+            }
+            else
+            if (GameData.gems_receive == 2)
+            {
+                CAT.GetComponent<SpriteRenderer>().sprite = cat2;
+            }
+            else
+            if (GameData.gems_receive == 3)
+            {
+                CAT.GetComponent<SpriteRenderer>().sprite = cat3;
+            }
+            else
+            if (GameData.gems_receive == 4)
+            {
+                CAT.GetComponent<SpriteRenderer>().sprite = cat1;
+            }
+        }
 
     }
 }
