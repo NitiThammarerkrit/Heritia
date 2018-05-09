@@ -8,16 +8,17 @@ public class CameraFollowN : MonoBehaviour {
     public GameObject T;
     public static bool m ;
 
-    public static float[] rightrim = new float[6];
+    public static float[] rightrim = new float[7];
 
     void Start()
     {
         rightrim[0] = 170.0f;
-        rightrim[1] = 114.0f;
-        rightrim[2] = 170.0f;
-        rightrim[3] = 142.0f;
-        rightrim[4] = 83.0f;
-        rightrim[5] = 105.0f;
+        rightrim[1] = 11.0f;
+        rightrim[2] = 114.0f;
+        rightrim[3] = 170.0f;
+        rightrim[4] = 142.0f;
+        rightrim[5] = 83.0f;
+        rightrim[6] = 105.0f;
     }
 
     // Update is called once per frame

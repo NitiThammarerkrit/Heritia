@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Door : MonoBehaviour {
 
-	
 	void OnTriggerStay2D (Collider2D other)
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && Application.loadedLevel == 2)
         {
-            StartCoroutine(GotoHouse());
+            GameData.previous_scene = 2;
+            GameData.current_scene = 1;
+            StartCoroutine(Goto("House"));
+        }
+        else if (Input.GetKeyDown(KeyCode.Z) && Application.loadedLevel == 1)
+        {
+            GameData.previous_scene = 1;
+            GameData.current_scene = 2;
+            StartCoroutine(Goto("Farm"));
         }
     }
 
-    IEnumerator GotoHouse ()
+    IEnumerator Goto (string scene)
     {
-        yield return new WaitForSeconds(0.5f);
-        Application.LoadLevel("House");
+        GameObject.Find("TransitionController").GetComponent<TransitionController>().gogo();
+        yield return new WaitForSeconds(1.0f);
+        Application.LoadLevel(scene);
     }
 }

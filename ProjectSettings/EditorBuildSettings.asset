@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 9dfba35d363be7d49804da494db4384d
   - enabled: 1
+    path: Assets/House.unity
+    guid: ae4326a82ea3347438329deeaf12f9d2
+  - enabled: 1
     path: Assets/Farm.unity
     guid: 4247a6d6e4271a14db6d37d7e67743dd
   - enabled: 1
@@ -23,9 +26,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Beach.unity
     guid: 7b3f2c4a536b2884680d929133626419
-  - enabled: 1
-    path: Assets/House.unity
-    guid: ae4326a82ea3347438329deeaf12f9d2
   - enabled: 1
     path: Assets/Setting.unity
     guid: 5d3d029be6a409641abf6996f69b5608
