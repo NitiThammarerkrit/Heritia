@@ -7,12 +7,14 @@ public class PlayerInput : MonoBehaviour {
 	Player player;
     Animator anim;
     bool jump = false;
-
+    GameObject zbut;
+    public AudioSource runSound;
 
     void Start () {
 		player = GetComponent<Player> ();
         anim = GetComponent<Animator>();
-	}
+        zbut = GameObject.Find("z_butt");
+    }
     
     bool left , right , firstmove = true;
 	void Update () {
@@ -24,7 +26,10 @@ public class PlayerInput : MonoBehaviour {
             anim.SetBool("Iswalk",true);
         }
         else
+        {
             anim.SetBool("Iswalk", false);
+            runSound.Play();
+        }
 
         if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
@@ -53,5 +58,6 @@ public class PlayerInput : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-    }
+        zbut.GetComponent<SpriteRenderer>().flipX = true;
+    }   
 }

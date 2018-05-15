@@ -61,6 +61,10 @@ public class CameraFollow : MonoBehaviour {
 				}
 			}
 		}
+        if (transform.position.y <=0f)
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
 
 
 		currentLookAheadX = Mathf.SmoothDamp (currentLookAheadX, targetLookAheadX, ref smoothLookVelocityX, lookSmoothTimeX);

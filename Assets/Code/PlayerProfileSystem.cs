@@ -6,25 +6,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-public class GameData
+public static class GameData
 {
+    public static bool pass_tutorial;
     public static int current_scene;
     public static int previous_scene;
-    public static bool[] events_complete;
-    public static bool[] gems_receive;
+    public static bool[] events_complete = new bool [100];
+    public static int gems_receive;
+    public static string[] items = new string[8];
 }
 
-public class SaveLoad
+public static class SaveLoad
 {
     public static void Save()
     {
         BinaryFormatter bF = new BinaryFormatter();
         using (FileStream fs = new FileStream("savefile.bin", FileMode.Create, FileAccess.Write))
         {
+            bF.Serialize(fs, GameData.pass_tutorial);
             bF.Serialize(fs, GameData.current_scene);
             bF.Serialize(fs, GameData.previous_scene);
             for (int i = 0; i < GameData.events_complete.Length; i++) { bF.Serialize(fs, GameData.events_complete[i]); }
-            for (int i = 0; i < GameData.gems_receive.Length; i++) { bF.Serialize(fs, GameData.gems_receive[i]); }
+            bF.Serialize(fs, GameData.gems_receive);
+            for (int i = 0; i < GameData.items.Length; i++) { bF.Serialize(fs, GameData.items[i]); }
         }
     }
 
@@ -34,14 +38,15 @@ public class SaveLoad
         {
             return;
         }
-
         BinaryFormatter bF = new BinaryFormatter();
         using (FileStream fs = new FileStream("savefile.bin", FileMode.Open, FileAccess.Read))
         {
+            GameData.pass_tutorial = (bool)bF.Deserialize(fs);
             GameData.current_scene = (int)bF.Deserialize(fs);
             GameData.previous_scene = (int)bF.Deserialize(fs);
             for (int i = 0; i < GameData.events_complete.Length; i++) { GameData.events_complete[i] = (bool)bF.Deserialize(fs); }
-            for (int i = 0; i < GameData.gems_receive.Length; i++) { GameData.gems_receive[i] = (bool)bF.Deserialize(fs); }
+            GameData.gems_receive = (int)bF.Deserialize(fs); 
+            for (int i = 0; i < GameData.items.Length; i++) { GameData.items[i] = (string)bF.Deserialize(fs); }
         }
     }
 }

@@ -1823,8 +1823,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1486324617}
-        m_MethodName: NewGame
-        m_Mode: 5
+        m_MethodName: Backfromsetting
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2973,6 +2973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c7d1a00e3630d4ab2554bb5c2b7c22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutscene: {fileID: 0}
 --- !u!1 &1514064616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,7 +3145,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

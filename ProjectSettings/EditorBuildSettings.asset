@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Menu.unity
     guid: 9dfba35d363be7d49804da494db4384d
   - enabled: 1
+    path: Assets/House.unity
+    guid: ae4326a82ea3347438329deeaf12f9d2
+  - enabled: 1
     path: Assets/Farm.unity
     guid: 4247a6d6e4271a14db6d37d7e67743dd
   - enabled: 1
