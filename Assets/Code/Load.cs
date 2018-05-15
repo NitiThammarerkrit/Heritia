@@ -31,6 +31,7 @@ public class Load : MonoBehaviour {
     {
         cutscene.SetActive(true);
         Time.timeScale = 1;
+        GameData.pass_tutorial = false;
         GameData.current_scene = 1;
         GameData.previous_scene = 1;
         for (int i = 0; i < 8; i++)

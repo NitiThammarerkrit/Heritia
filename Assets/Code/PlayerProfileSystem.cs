@@ -8,6 +8,7 @@ using System;
 
 public static class GameData
 {
+    public static bool pass_tutorial;
     public static int current_scene;
     public static int previous_scene;
     public static bool[] events_complete = new bool [100];
@@ -22,6 +23,7 @@ public static class SaveLoad
         BinaryFormatter bF = new BinaryFormatter();
         using (FileStream fs = new FileStream("savefile.bin", FileMode.Create, FileAccess.Write))
         {
+            bF.Serialize(fs, GameData.pass_tutorial);
             bF.Serialize(fs, GameData.current_scene);
             bF.Serialize(fs, GameData.previous_scene);
             for (int i = 0; i < GameData.events_complete.Length; i++) { bF.Serialize(fs, GameData.events_complete[i]); }
@@ -39,6 +41,7 @@ public static class SaveLoad
         BinaryFormatter bF = new BinaryFormatter();
         using (FileStream fs = new FileStream("savefile.bin", FileMode.Open, FileAccess.Read))
         {
+            GameData.pass_tutorial = (bool)bF.Deserialize(fs);
             GameData.current_scene = (int)bF.Deserialize(fs);
             GameData.previous_scene = (int)bF.Deserialize(fs);
             for (int i = 0; i < GameData.events_complete.Length; i++) { GameData.events_complete[i] = (bool)bF.Deserialize(fs); }

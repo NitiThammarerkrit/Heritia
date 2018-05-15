@@ -322,6 +322,7 @@
     <Compile Include="Assets\Code\TextImporter.cs" />
     <Compile Include="Assets\Code\TextManager.cs" />
     <Compile Include="Assets\Code\TransitionController.cs" />
+    <Compile Include="Assets\Code\TutorialController.cs" />
     <Compile Include="Assets\Code\WarpGate.cs" />
   </ItemGroup>
   <ItemGroup>

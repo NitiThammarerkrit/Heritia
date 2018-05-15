@@ -13,7 +13,7 @@ public class CameraFollowN : MonoBehaviour {
     void Start()
     {
         rightrim[0] = 170.0f;
-        rightrim[1] = 11.0f;
+        rightrim[1] = 3.6f;
         rightrim[2] = 114.0f;
         rightrim[3] = 170.0f;
         rightrim[4] = 142.0f;

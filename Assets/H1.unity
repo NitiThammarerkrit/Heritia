@@ -15802,7 +15802,7 @@ MonoBehaviour:
   ChiefBeach: {fileID: 0}
   ButcherBefore: {fileID: 697066010}
   Hunter: {fileID: 0}
-  ButcherBefores: {fileID: 21300000, guid: 803fd207e46ca8a428cd1e9ea54b66b8, type: 3}
+  ButcherBefores: {fileID: 21300000, guid: 7f45dcc76596f114dbd07695e928b719, type: 3}
   ButcherAfter: {fileID: 21300000, guid: 9f29c1a65837fb642be36c25d16a0bef, type: 3}
   Dog1Before: {fileID: 1138337292}
   Dog2Before: {fileID: 1559931}
