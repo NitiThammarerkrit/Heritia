@@ -46,6 +46,7 @@ public class TextManager : MonoBehaviour
     public GameObject gem;
     public Inventory inventory;
     public GameObject requiment;
+    public GameObject Coinrequiment;
     bool onetime = true;
     bool inconver = false;
     float delayfade = 2.5f;
@@ -364,40 +365,78 @@ public class TextManager : MonoBehaviour
                         }
                         for (int i = 0; i < inventory.inventory.Length; i++)
                         {
-                            if (inventory.inventory[i] == requiment && GameData.events_complete[2] == false)
+                            for (int j = 0; j < inventory.inventory.Length; j++)
                             {
-                                if (requiment == GameObject.Find("Coin")&&FirstTime)
-                                {
-                                    FirstTime = false;
-                                    Hunter = true;
-                                    inconver = true;
-                                    theTextBox.ReloadScript(succeedText);
-                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
-                                    {
-                                        theTextBox.currentLine = startLine;
-                                    }
-                                    theTextBox.endAtLine = succeedendLine;
-                                    theTextBox.EnableTextBox();
-                                }
-                                else
-                                if (requiment != GameObject.Find("Coin"))
+                                if (inventory.inventory[i] == requiment && inventory.inventory[j] == Coinrequiment && GameData.events_complete[2] == false)
                                 {
                                     inconver = true;
                                     theTextBox.issucceed = true;
                                     theTextBox.number = 2;
                                     theTextBox.ReloadScript(succeedText);
+                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
                                     if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = succeedendLine;
                                     theTextBox.EnableTextBox();
+                                    break;
+                                }
+                                else
+                                if (inventory.inventory[i] == Coinrequiment && inventory.inventory[j] == requiment && GameData.events_complete[2] == false)
+                                {
+                                    inconver = true;
+                                    theTextBox.issucceed = true;
+                                    theTextBox.number = 2;
+                                    theTextBox.ReloadScript(succeedText);
                                     inventory.RemoveItemfrominventory(inventory.inventory[i]);
                                     inventory.AddItem(gem);
                                     gem.SetActive(false);
+                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = succeedendLine;
+                                    theTextBox.EnableTextBox();
+                                    break;
                                 }
-                                break;
+                                else
+                                if (inventory.inventory[i] == requiment && GameData.events_complete[2] == false)
+                                {
+                                    inconver = true;
+                                    theTextBox.issucceed = true;
+                                    theTextBox.number = 2;
+                                    theTextBox.ReloadScript(succeedText);
+                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
+                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = succeedendLine;
+                                    theTextBox.EnableTextBox();
+                                    break;
+                                }
+                                else
+                                if (inventory.inventory[i] == Coinrequiment)
+                                {
+                                    FirstTime = false;
+                                    Hunter = true;
+                                    inconver = true;
+                                    theTextBox.ReloadScript(FirstText);
+                                    if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = FirstTimeendLine;
+                                    theTextBox.EnableTextBox();
+                                    break;
+                                }
                             }
+
                         }
                     }
                     else
@@ -728,14 +767,14 @@ public class TextManager : MonoBehaviour
                         }
                         if (GameData.gems_receive == 0)
                         {
-                           inconver = true;
-                           theTextBox.ReloadScript(FirstText);
-                           if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
-                           {
-                               theTextBox.currentLine = startLine;
-                           }
-                           theTextBox.endAtLine = FirstTimeendLine;
-                           theTextBox.EnableTextBox();
+                            inconver = true;
+                            theTextBox.ReloadScript(FirstText);
+                            if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
+                            {
+                                theTextBox.currentLine = startLine;
+                            }
+                            theTextBox.endAtLine = FirstTimeendLine;
+                            theTextBox.EnableTextBox();
                         }
                         else
                         if (GameData.gems_receive == 1 && !FirstTime)
@@ -761,7 +800,7 @@ public class TextManager : MonoBehaviour
                             theTextBox.endAtLine = CAT2AfterEnd;
                             theTextBox.EnableTextBox();
                         }
-                        else                   
+                        else
                         if (GameData.gems_receive == 3 && !FirstTime)
                         {
                             inconver = true;
@@ -774,12 +813,12 @@ public class TextManager : MonoBehaviour
                             theTextBox.EnableTextBox();
                         }
                     }
-                 inconver = true;
+                    inconver = true;
                 }
-                
             }
         }
     }
+    
     void OnTriggerEnter2D(Collider other)
     {
         inconver = false;

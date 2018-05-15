@@ -14,11 +14,7 @@ public class Check : MonoBehaviour {
     public Sprite ButcherBefores;
     public Sprite ButcherAfter;
     public GameObject Dog1Before;
-    public GameObject Dog2Before;
-    public Sprite Dog1Befores;
-    public Sprite Dog2Befores;
-    public Sprite Dog1After;
-    public Sprite Dog2After;
+    public GameObject Dog1After;
     public GameObject Hunterbefore;
     public GameObject HunterAfter;
 
@@ -69,15 +65,19 @@ public class Check : MonoBehaviour {
             }
             if (GameData.events_complete[1] == true)
             {
-                Dog1Before.transform.position = new Vector3(78, -2.5f, -3f);
-                Dog1Before.GetComponent<SpriteRenderer>().sprite = Dog1After;
-                Dog2Before.GetComponent<SpriteRenderer>().sprite = Dog2After;
+                //Dog1Before.transform.position = new Vector3(78, -2.5f, -3f);
+                if (Dog1After != null)
+                    Dog1After.SetActive(true);
+                if (Dog1Before != null)
+                    Dog1Before.SetActive(false);
             }
             else if (GameData.events_complete[1] == false)
             {
-                Dog1Before.transform.position = new Vector3(161.9f, -2.527f, -3f);
-                Dog1Before.GetComponent<SpriteRenderer>().sprite = Dog1Befores;
-                Dog2Before.GetComponent<SpriteRenderer>().sprite = Dog2Befores;
+               // Dog1Before.transform.position = new Vector3(161.9f, -2.527f, -3f);
+                if (Dog1After != null)
+                    Dog1After.SetActive(false);
+                if (Dog1Before != null)
+                    Dog1Before.SetActive(true);
             }
         }
         if (Hunter != null)
@@ -115,27 +115,43 @@ public class Check : MonoBehaviour {
         {
             if(GameData.gems_receive==0)
             {
-                CAT.GetComponent<SpriteRenderer>().sprite = cat0;
+                CAT.transform.GetChild(0).gameObject.SetActive(true);
+                CAT.transform.GetChild(1).gameObject.SetActive(false);
+                CAT.transform.GetChild(2).gameObject.SetActive(false);
+                CAT.transform.GetChild(3).gameObject.SetActive(false);
+                //CAT.GetComponent<SpriteRenderer>().sprite = cat0;
             }
             else
             if (GameData.gems_receive == 1)
             {
-                CAT.GetComponent<SpriteRenderer>().sprite = cat1;
+                CAT.transform.GetChild(0).gameObject.SetActive(false);
+                CAT.transform.GetChild(1).gameObject.SetActive(true);
+                CAT.transform.GetChild(2).gameObject.SetActive(false);
+                CAT.transform.GetChild(3).gameObject.SetActive(false);
+               // CAT.GetComponent<SpriteRenderer>().sprite = cat1;
             }
             else
             if (GameData.gems_receive == 2)
             {
-                CAT.GetComponent<SpriteRenderer>().sprite = cat2;
+                CAT.transform.GetChild(0).gameObject.SetActive(false);
+                CAT.transform.GetChild(1).gameObject.SetActive(false);
+                CAT.transform.GetChild(2).gameObject.SetActive(true);
+                CAT.transform.GetChild(3).gameObject.SetActive(false);
+                // CAT.GetComponent<SpriteRenderer>().sprite = cat2;
             }
             else
             if (GameData.gems_receive == 3)
             {
-                CAT.GetComponent<SpriteRenderer>().sprite = cat3;
+                CAT.transform.GetChild(0).gameObject.SetActive(false);
+                CAT.transform.GetChild(1).gameObject.SetActive(false);
+                CAT.transform.GetChild(2).gameObject.SetActive(false);
+                CAT.transform.GetChild(3).gameObject.SetActive(true);
+                // CAT.GetComponent<SpriteRenderer>().sprite = cat3;
             }
             else
             if (GameData.gems_receive == 4)
             {
-                CAT.GetComponent<SpriteRenderer>().sprite = cat1;
+                //CAT.GetComponent<SpriteRenderer>().sprite = cat1;
             }
         }
 
