@@ -7,12 +7,11 @@ public class TutorialController : MonoBehaviour {
     public GameObject tutorial;
     public GameObject door;
 
-	// Update is called once per frame
 	void Update () {
-		if (GameData.pass_tutorial == true)
+		if (GameData.pass_tutorial == false)
         {
             tutorial.SetActive(true);
-            door.SetActive(false);
+            //door.SetActive(false);
         }
         else
         {
@@ -20,4 +19,6 @@ public class TutorialController : MonoBehaviour {
             //door.SetActive(true);
         }
 	}
+
+    //don't forget to delete commend before build the game!
 }
