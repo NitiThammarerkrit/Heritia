@@ -2177,11 +2177,27 @@ MonoBehaviour:
   unsucceedText: {fileID: 4900000, guid: 5a17154e6dbd4a349bb0b56134025d6f, type: 3}
   FirstText: {fileID: 4900000, guid: 2ced0215b6c533b4b8072e6df78a63ce, type: 3}
   OnetimeText: {fileID: 4900000, guid: 6ca5bdb619316ec489353183867cd373, type: 3}
+  CAT1: {fileID: 0}
+  CAT1After: {fileID: 0}
+  CAT2: {fileID: 0}
+  CAT2After: {fileID: 0}
+  CAT3: {fileID: 0}
+  CAT3After: {fileID: 0}
+  CAT4: {fileID: 0}
+  CAT4After: {fileID: 0}
   startLine: 0
   FirstTimeendLine: 10
-  unsucceedendLine: 1
+  unsucceedendLine: 2
   succeedendLine: 8
   OnetimeendLine: 1
+  CAT1End: 0
+  CAT1AfterEnd: 0
+  CAT2End: 0
+  CAT2AfterEnd: 0
+  CAT3End: 0
+  CAT3AfterEnd: 0
+  CAT4End: 0
+  CAT4AfterEnd: 0
   theTextBox: {fileID: 1626646094}
   destroyWhenActivate: 0
   requireButtonPress: 1
@@ -4274,6 +4290,7 @@ GameObject:
   - component: {fileID: 449945959}
   - component: {fileID: 449945961}
   - component: {fileID: 449945960}
+  - component: {fileID: 449945962}
   m_Layer: 0
   m_Name: dialoguezone
   m_TagString: Untagged
@@ -4311,11 +4328,27 @@ MonoBehaviour:
   unsucceedText: {fileID: 4900000, guid: 38e7dc38d95eff9408d76788c65c5fc0, type: 3}
   FirstText: {fileID: 4900000, guid: 287dfb4e6368f144abc3ebfa1b4cedc2, type: 3}
   OnetimeText: {fileID: 4900000, guid: 3bb99204c8b157f46a59eed8eed83add, type: 3}
+  CAT1: {fileID: 0}
+  CAT1After: {fileID: 0}
+  CAT2: {fileID: 0}
+  CAT2After: {fileID: 0}
+  CAT3: {fileID: 0}
+  CAT3After: {fileID: 0}
+  CAT4: {fileID: 0}
+  CAT4After: {fileID: 0}
   startLine: 0
   FirstTimeendLine: 11
-  unsucceedendLine: 1
+  unsucceedendLine: 2
   succeedendLine: 10
   OnetimeendLine: 13
+  CAT1End: 0
+  CAT1AfterEnd: 0
+  CAT2End: 0
+  CAT2AfterEnd: 0
+  CAT3End: 0
+  CAT3AfterEnd: 0
+  CAT4End: 0
+  CAT4AfterEnd: 0
   theTextBox: {fileID: 608968078}
   destroyWhenActivate: 0
   requireButtonPress: 1
@@ -4351,6 +4384,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.184425, y: 14.096277}
   m_EdgeRadius: 0
+--- !u!114 &449945962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449945958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155dd9d4bf3ffc94babd6b5914c05825, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1184903090}
+  succeedText: {fileID: 4900000, guid: 18caff64430264045bdd36484df036c2, type: 3}
+  unsucceedText: {fileID: 4900000, guid: 38e7dc38d95eff9408d76788c65c5fc0, type: 3}
+  FirstText: {fileID: 4900000, guid: 287dfb4e6368f144abc3ebfa1b4cedc2, type: 3}
+  OnetimeText: {fileID: 4900000, guid: 3bb99204c8b157f46a59eed8eed83add, type: 3}
+  CAT1: {fileID: 0}
+  CAT1After: {fileID: 0}
+  CAT2: {fileID: 0}
+  CAT2After: {fileID: 0}
+  CAT3: {fileID: 0}
+  CAT3After: {fileID: 0}
+  CAT4: {fileID: 0}
+  CAT4After: {fileID: 0}
+  startLine: 0
+  FirstTimeendLine: 11
+  unsucceedendLine: 1
+  succeedendLine: 6
+  OnetimeendLine: 13
+  CAT1End: 0
+  CAT1AfterEnd: 0
+  CAT2End: 0
+  CAT2AfterEnd: 0
+  CAT3End: 0
+  CAT3AfterEnd: 0
+  CAT4End: 0
+  CAT4AfterEnd: 0
+  theTextBox: {fileID: 608968078}
+  destroyWhenActivate: 0
+  requireButtonPress: 1
+  changeto: {fileID: 0}
+  canvas: {fileID: 0}
+  item: {fileID: 0}
+  gem: {fileID: 1594823668}
+  inventory: {fileID: 830301911}
+  requiment: {fileID: 1594823666}
 --- !u!1 &460285712
 GameObject:
   m_ObjectHideFlags: 0
@@ -11042,11 +11121,27 @@ MonoBehaviour:
   unsucceedText: {fileID: 4900000, guid: f6831bb1162825e4780717c1effc7d0f, type: 3}
   FirstText: {fileID: 4900000, guid: 287dfb4e6368f144abc3ebfa1b4cedc2, type: 3}
   OnetimeText: {fileID: 4900000, guid: 3bb99204c8b157f46a59eed8eed83add, type: 3}
+  CAT1: {fileID: 0}
+  CAT1After: {fileID: 0}
+  CAT2: {fileID: 0}
+  CAT2After: {fileID: 0}
+  CAT3: {fileID: 0}
+  CAT3After: {fileID: 0}
+  CAT4: {fileID: 0}
+  CAT4After: {fileID: 0}
   startLine: 0
   FirstTimeendLine: 11
   unsucceedendLine: 1
   succeedendLine: 7
   OnetimeendLine: 13
+  CAT1End: 0
+  CAT1AfterEnd: 0
+  CAT2End: 0
+  CAT2AfterEnd: 0
+  CAT3End: 0
+  CAT3AfterEnd: 0
+  CAT4End: 0
+  CAT4AfterEnd: 0
   theTextBox: {fileID: 1253785745}
   destroyWhenActivate: 0
   requireButtonPress: 1
@@ -11258,7 +11353,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10

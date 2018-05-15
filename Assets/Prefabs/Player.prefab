@@ -176,7 +176,7 @@ MonoBehaviour:
   maxJumpHeight: 3
   minJumpHeight: 1
   timeToJumpApex: 0.4
-  moveSpeed: 8.125
+  moveSpeed: 80.125
   wallJumpClimb: {x: 7.5, y: 16}
   wallJumpOff: {x: 8.5, y: 7}
   wallLeap: {x: 18, y: 17}

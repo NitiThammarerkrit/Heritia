@@ -7,12 +7,14 @@ public class PlayerInput : MonoBehaviour {
 	Player player;
     Animator anim;
     bool jump = false;
+    GameObject zbut;
 
 
     void Start () {
 		player = GetComponent<Player> ();
         anim = GetComponent<Animator>();
-	}
+        zbut = GameObject.Find("z_butt");
+    }
     
     bool left , right , firstmove = true;
 	void Update () {
@@ -53,5 +55,6 @@ public class PlayerInput : MonoBehaviour {
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-    }
+        zbut.GetComponent<SpriteRenderer>().flipX = true;
+    }   
 }

@@ -39,6 +39,7 @@ public class Load : MonoBehaviour {
             GameData.events_complete[i] = false;
             GameData.gems_receive = 0;
             GameData.items[i] = null;
+            GameData.pass_tutorial = false;
         }   
         SaveLoad.Save();
         StartCoroutine(DelayBeforeGo());

@@ -2433,13 +2433,29 @@ MonoBehaviour:
   character: {fileID: 2054471959}
   succeedText: {fileID: 4900000, guid: 57130aef463211c4fa682af2085c0878, type: 3}
   unsucceedText: {fileID: 4900000, guid: 38e7dc38d95eff9408d76788c65c5fc0, type: 3}
-  FirstText: {fileID: 4900000, guid: 287dfb4e6368f144abc3ebfa1b4cedc2, type: 3}
+  FirstText: {fileID: 4900000, guid: b74c1098e49004345b03bffb56dac4f5, type: 3}
   OnetimeText: {fileID: 4900000, guid: 3bb99204c8b157f46a59eed8eed83add, type: 3}
+  CAT1: {fileID: 4900000, guid: d0e2b1dfd1f839043a47528c0b8f8615, type: 3}
+  CAT1After: {fileID: 4900000, guid: c58f1d38a53249b43b248e2cb7412c0d, type: 3}
+  CAT2: {fileID: 4900000, guid: 7c1290e6a6fc2db4e9dfdeb49187dc39, type: 3}
+  CAT2After: {fileID: 4900000, guid: 25acd672b34bccc44a420c839ccef001, type: 3}
+  CAT3: {fileID: 4900000, guid: 7aa1cfaccf9369d478403698499837fc, type: 3}
+  CAT3After: {fileID: 4900000, guid: c322fb5f4537f0a4d94bf427f55fa781, type: 3}
+  CAT4: {fileID: 4900000, guid: 6f6d5f7de2cd49e4ca00b7c4721f8d6a, type: 3}
+  CAT4After: {fileID: 4900000, guid: a86d1f6abba3efb49b81b0e57c3c95de, type: 3}
   startLine: 0
-  FirstTimeendLine: 11
+  FirstTimeendLine: 1
   unsucceedendLine: 1
   succeedendLine: 10
   OnetimeendLine: 13
+  CAT1End: 15
+  CAT1AfterEnd: 1
+  CAT2End: 2
+  CAT2AfterEnd: 1
+  CAT3End: 1
+  CAT3AfterEnd: 1
+  CAT4End: 1
+  CAT4AfterEnd: 1
   theTextBox: {fileID: 308434272}
   destroyWhenActivate: 0
   requireButtonPress: 1
@@ -5117,7 +5133,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
