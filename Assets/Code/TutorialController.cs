@@ -11,14 +11,12 @@ public class TutorialController : MonoBehaviour {
 		if (GameData.pass_tutorial == false)
         {
             tutorial.SetActive(true);
-            //door.SetActive(false);
+            door.SetActive(false);
         }
         else
         {
             tutorial.SetActive(false);
-            //door.SetActive(true);
+            door.SetActive(true);
         }
 	}
-
-    //don't forget to delete commend before build the game!
 }
