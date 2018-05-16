@@ -46,6 +46,7 @@ public class TextManager : MonoBehaviour
     public GameObject gem;
     public Inventory inventory;
     public GameObject requiment;
+    public GameObject Coinrequiment;
     bool onetime = true;
     bool inconver = false;
     float delayfade = 2.5f;
@@ -53,6 +54,8 @@ public class TextManager : MonoBehaviour
     bool FirstTime = true;
     bool isgive;
     static bool FarmerFirstTime = true;
+
+    public GameObject fadeout;
 
     // Use this for initialization
     void Start()
@@ -364,23 +367,9 @@ public class TextManager : MonoBehaviour
                         }
                         for (int i = 0; i < inventory.inventory.Length; i++)
                         {
-                            if (inventory.inventory[i] == requiment && GameData.events_complete[2] == false)
+                            for (int j = 0; j < inventory.inventory.Length; j++)
                             {
-                                if (requiment == GameObject.Find("Coin")&&FirstTime)
-                                {
-                                    FirstTime = false;
-                                    Hunter = true;
-                                    inconver = true;
-                                    theTextBox.ReloadScript(succeedText);
-                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
-                                    {
-                                        theTextBox.currentLine = startLine;
-                                    }
-                                    theTextBox.endAtLine = succeedendLine;
-                                    theTextBox.EnableTextBox();
-                                }
-                                else
-                                if (requiment != GameObject.Find("Coin"))
+                                if (inventory.inventory[i] == requiment && inventory.inventory[j] == Coinrequiment && GameData.events_complete[2] == false)
                                 {
                                     inconver = true;
                                     theTextBox.issucceed = true;
@@ -391,19 +380,70 @@ public class TextManager : MonoBehaviour
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = succeedendLine;
-                                    theTextBox.EnableTextBox();
                                     inventory.RemoveItemfrominventory(inventory.inventory[i]);
                                     inventory.AddItem(gem);
                                     gem.SetActive(false);
+                                    theTextBox.EnableTextBox();
+                                    break;
                                 }
-                                break;
+                                else
+                                if (inventory.inventory[i] == Coinrequiment && inventory.inventory[j] == requiment && GameData.events_complete[2] == false)
+                                {
+                                    inconver = true;
+                                    theTextBox.issucceed = true;
+                                    theTextBox.number = 2;
+                                    theTextBox.ReloadScript(succeedText);
+                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = succeedendLine;
+                                    inventory.RemoveItemfrominventory(inventory.inventory[j]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
+                                    theTextBox.EnableTextBox();
+                                    break;
+                                }
+                                else
+                                if (inventory.inventory[i] == requiment && GameData.events_complete[2] == false)
+                                {
+                                    inconver = true;
+                                    theTextBox.issucceed = true;
+                                    theTextBox.number = 2;
+                                    theTextBox.ReloadScript(succeedText);
+                                    if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = succeedendLine;
+                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
+                                    theTextBox.EnableTextBox();
+                                    break;
+                                }
+                                else
+                                if (inventory.inventory[i] == Coinrequiment)
+                                {
+                                    Hunter = true;
+                                    inconver = true;
+                                    theTextBox.ReloadScript(FirstText);
+                                    if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
+                                    {
+                                        theTextBox.currentLine = startLine;
+                                    }
+                                    theTextBox.endAtLine = FirstTimeendLine;
+                                    theTextBox.EnableTextBox();
+                                    break;
+                                }
                             }
+
                         }
                     }
                     else
                     if (this.GetComponentInParent<Rigidbody2D>().name == "Christine")
                     {
-                        if (FirstTime && GameData.events_complete[2] == false)
+                        if (GameData.events_complete[2] == false)
                         {
                             inconver = true;
                             for (int i = 0; i < inventory.inventory.Length; i++)
@@ -417,7 +457,6 @@ public class TextManager : MonoBehaviour
                             if (!isgive)
                             {
                                 inconver = true;
-                                FirstTime = false;
                                 theTextBox.ReloadScript(FirstText);
                                 if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
                                 {
@@ -428,18 +467,18 @@ public class TextManager : MonoBehaviour
                                 inventory.AddItem(item);
                                 item.SetActive(false);
                             }
-                        }
-                        else
-                        if (!FirstTime && GameData.events_complete[2] == false)
-                        {
-                            inconver = true;
-                            theTextBox.ReloadScript(unsucceedText);
-                            if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                            else
+                            if (isgive)
                             {
-                                theTextBox.currentLine = startLine;
+                                inconver = true;
+                                theTextBox.ReloadScript(unsucceedText);
+                                if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                                {
+                                    theTextBox.currentLine = startLine;
+                                }
+                                theTextBox.endAtLine = unsucceedendLine;
+                                theTextBox.EnableTextBox();
                             }
-                            theTextBox.endAtLine = unsucceedendLine;
-                            theTextBox.EnableTextBox();
                         }
                     }
                     else
@@ -474,7 +513,7 @@ public class TextManager : MonoBehaviour
                     else
                     if (this.GetComponentInParent<Rigidbody2D>().name == "Farmer")
                     {
-                        if (FarmerFirstTime)
+                        if (FarmerFirstTime && GameData.events_complete[5] == false)
                         {
                             inconver = true;
                             FarmerFirstTime = false;
@@ -487,9 +526,11 @@ public class TextManager : MonoBehaviour
                             theTextBox.EnableTextBox();
                             inventory.AddItem(item);
                             item.SetActive(false);
+                            GameData.events_complete[5] = true;
+                            SaveLoad.Save();
                         }
                         else
-                        if (!FarmerFirstTime)
+                        //if (!FarmerFirstTime)
                         {
                             inconver = true;
                             theTextBox.ReloadScript(succeedText);
@@ -715,27 +756,31 @@ public class TextManager : MonoBehaviour
                                 {
                                     inconver = true;
                                     FirstTime = false;
-                                    theTextBox.ReloadScript(CAT4);
+                                    /*theTextBox.ReloadScript(CAT4);
                                     if (theTextBox.currentLine >= CAT4End || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = CAT4End;
-                                    theTextBox.EnableTextBox();
+                                    theTextBox.EnableTextBox();*/
+                                    if (fadeout != null) fadeout.SetActive(true);
+
+                                    StartCoroutine(gameend());
+
                                 }
                                 SaveLoad.Save();
                             }
                         }
                         if (GameData.gems_receive == 0)
                         {
-                           inconver = true;
-                           theTextBox.ReloadScript(FirstText);
-                           if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
-                           {
-                               theTextBox.currentLine = startLine;
-                           }
-                           theTextBox.endAtLine = FirstTimeendLine;
-                           theTextBox.EnableTextBox();
+                            inconver = true;
+                            theTextBox.ReloadScript(FirstText);
+                            if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
+                            {
+                                theTextBox.currentLine = startLine;
+                            }
+                            theTextBox.endAtLine = FirstTimeendLine;
+                            theTextBox.EnableTextBox();
                         }
                         else
                         if (GameData.gems_receive == 1 && !FirstTime)
@@ -761,7 +806,7 @@ public class TextManager : MonoBehaviour
                             theTextBox.endAtLine = CAT2AfterEnd;
                             theTextBox.EnableTextBox();
                         }
-                        else                   
+                        else
                         if (GameData.gems_receive == 3 && !FirstTime)
                         {
                             inconver = true;
@@ -773,13 +818,14 @@ public class TextManager : MonoBehaviour
                             theTextBox.endAtLine = CAT3AfterEnd;
                             theTextBox.EnableTextBox();
                         }
+                        SaveLoad.Save();
                     }
-                 inconver = true;
+                    inconver = true;
                 }
-                
             }
         }
     }
+    
     void OnTriggerEnter2D(Collider other)
     {
         inconver = false;
@@ -807,5 +853,11 @@ public class TextManager : MonoBehaviour
         {
             waitForPress = false;
         }
+    }
+
+    IEnumerator gameend ()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Application.LoadLevel("Cutscene");
     }
 }
