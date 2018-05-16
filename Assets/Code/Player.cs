@@ -47,6 +47,14 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 
+        if(Input.GetKey(KeyCode.Z)&& Input.GetKey(KeyCode.X)&& Input.GetKey(KeyCode.C))
+        {
+            moveSpeed = 50;
+        }
+        if (Input.GetKey(KeyCode.Z) && Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.V))
+        {
+            moveSpeed = 8.125f;
+        }
         if (!canmove)
         {
             return;

@@ -423,7 +423,6 @@ public class TextManager : MonoBehaviour
                                 else
                                 if (inventory.inventory[i] == Coinrequiment)
                                 {
-                                    FirstTime = false;
                                     Hunter = true;
                                     inconver = true;
                                     theTextBox.ReloadScript(FirstText);
@@ -513,7 +512,7 @@ public class TextManager : MonoBehaviour
                     else
                     if (this.GetComponentInParent<Rigidbody2D>().name == "Farmer")
                     {
-                        if (FarmerFirstTime)
+                        if (FarmerFirstTime && GameData.events_complete[5] == false)
                         {
                             inconver = true;
                             FarmerFirstTime = false;
@@ -526,9 +525,11 @@ public class TextManager : MonoBehaviour
                             theTextBox.EnableTextBox();
                             inventory.AddItem(item);
                             item.SetActive(false);
+                            GameData.events_complete[5] = true;
+                            SaveLoad.Save();
                         }
                         else
-                        if (!FarmerFirstTime)
+                        //if (!FarmerFirstTime)
                         {
                             inconver = true;
                             theTextBox.ReloadScript(succeedText);
