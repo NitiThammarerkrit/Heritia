@@ -812,6 +812,7 @@ public class TextManager : MonoBehaviour
                             theTextBox.endAtLine = CAT3AfterEnd;
                             theTextBox.EnableTextBox();
                         }
+                        SaveLoad.Save();
                     }
                     inconver = true;
                 }
