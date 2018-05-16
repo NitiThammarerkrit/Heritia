@@ -373,14 +373,14 @@ public class TextManager : MonoBehaviour
                                     theTextBox.issucceed = true;
                                     theTextBox.number = 2;
                                     theTextBox.ReloadScript(succeedText);
-                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
-                                    inventory.AddItem(gem);
-                                    gem.SetActive(false);
                                     if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = succeedendLine;
+                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
                                     theTextBox.EnableTextBox();
                                     break;
                                 }
@@ -391,14 +391,14 @@ public class TextManager : MonoBehaviour
                                     theTextBox.issucceed = true;
                                     theTextBox.number = 2;
                                     theTextBox.ReloadScript(succeedText);
-                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
-                                    inventory.AddItem(gem);
-                                    gem.SetActive(false);
                                     if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = succeedendLine;
+                                    inventory.RemoveItemfrominventory(inventory.inventory[j]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
                                     theTextBox.EnableTextBox();
                                     break;
                                 }
@@ -409,14 +409,14 @@ public class TextManager : MonoBehaviour
                                     theTextBox.issucceed = true;
                                     theTextBox.number = 2;
                                     theTextBox.ReloadScript(succeedText);
-                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
-                                    inventory.AddItem(gem);
-                                    gem.SetActive(false);
                                     if (theTextBox.currentLine >= succeedendLine || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = succeedendLine;
+                                    inventory.RemoveItemfrominventory(inventory.inventory[i]);
+                                    inventory.AddItem(gem);
+                                    gem.SetActive(false);
                                     theTextBox.EnableTextBox();
                                     break;
                                 }
@@ -441,7 +441,7 @@ public class TextManager : MonoBehaviour
                     else
                     if (this.GetComponentInParent<Rigidbody2D>().name == "Christine")
                     {
-                        if (FirstTime && GameData.events_complete[2] == false)
+                        if (GameData.events_complete[2] == false)
                         {
                             inconver = true;
                             for (int i = 0; i < inventory.inventory.Length; i++)
@@ -455,7 +455,6 @@ public class TextManager : MonoBehaviour
                             if (!isgive)
                             {
                                 inconver = true;
-                                FirstTime = false;
                                 theTextBox.ReloadScript(FirstText);
                                 if (theTextBox.currentLine >= FirstTimeendLine || theTextBox.currentLine == 0)
                                 {
@@ -466,18 +465,18 @@ public class TextManager : MonoBehaviour
                                 inventory.AddItem(item);
                                 item.SetActive(false);
                             }
-                        }
-                        else
-                        if (!FirstTime && GameData.events_complete[2] == false)
-                        {
-                            inconver = true;
-                            theTextBox.ReloadScript(unsucceedText);
-                            if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                            else
+                            if (isgive)
                             {
-                                theTextBox.currentLine = startLine;
+                                inconver = true;
+                                theTextBox.ReloadScript(unsucceedText);
+                                if (theTextBox.currentLine >= unsucceedendLine || theTextBox.currentLine == 0)
+                                {
+                                    theTextBox.currentLine = startLine;
+                                }
+                                theTextBox.endAtLine = unsucceedendLine;
+                                theTextBox.EnableTextBox();
                             }
-                            theTextBox.endAtLine = unsucceedendLine;
-                            theTextBox.EnableTextBox();
                         }
                     }
                     else
