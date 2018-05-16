@@ -20,16 +20,15 @@ public class Load : MonoBehaviour {
     {
         cutscene.SetActive(true);
         Time.timeScale = 1;
-        GameData.pass_tutorial = false;
-        GameData.current_scene = 1;
-        GameData.previous_scene = 1;
         for (int i = 0; i < 8; i++)
         {
             GameData.events_complete[i] = false;
             GameData.gems_receive = 0;
             GameData.items[i] = "";
             GameData.pass_tutorial = false;
-        }   
+        }
+        GameData.current_scene = 1;
+        GameData.previous_scene = 1;
         SaveLoad.Save();
         StartCoroutine(DelayBeforeGo());
     }

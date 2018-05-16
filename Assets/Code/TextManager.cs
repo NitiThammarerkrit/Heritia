@@ -39,6 +39,7 @@ public class TextManager : MonoBehaviour
     public bool requireButtonPress;
     private bool waitForPress;
     public static bool Hunter = false;
+    public static bool DEKonetime = true;
     public Sprite changeto;
 
     public GameObject canvas;
@@ -306,9 +307,10 @@ public class TextManager : MonoBehaviour
                             theTextBox.EnableTextBox();
                         }
                         else
-                        if (GameData.events_complete[1] == true && onetime)
+                        if (GameData.events_complete[1] == true && DEKonetime)
                         {
                             inconver = true;
+                            DEKonetime = false;
                             theTextBox.ReloadScript(OnetimeText);
                             if (theTextBox.currentLine >= OnetimeendLine || theTextBox.currentLine == 0)
                             {
@@ -318,10 +320,10 @@ public class TextManager : MonoBehaviour
                             theTextBox.EnableTextBox();
                             inventory.AddItem(gem);
                             gem.SetActive(false);
-                            onetime = false;
+                            
                         }
                         else
-                        if (GameData.events_complete[1] == true && !onetime)
+                        if (GameData.events_complete[1] == true && !DEKonetime)
                         {
                             inconver = true;
                             theTextBox.ReloadScript(succeedText);

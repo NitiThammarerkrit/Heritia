@@ -30,6 +30,11 @@ public class Check : MonoBehaviour {
         for (int i = 0; i < 8; i++)
         {
             SaveLoad.Load();
+            if (GameData.items[i] == "")
+            {
+                GameData.items[i] = null;
+            }
+            else
             if (GameData.items[i] != null)
             {
                 Debug.Log(GameData.items[i]);
@@ -43,7 +48,12 @@ public class Check : MonoBehaviour {
 	void Update () {
         for (int i = 0; i < 8; i++)
         {
-            if(GameData.items[i]!=null)
+            if (GameData.items[i] == "")
+            {
+                GameData.items[i] = null;
+            }
+            else
+            if (GameData.items[i]!=null)
             {
                 Debug.Log(GameData.items[i]);
                 inventory.inventory[i] = GameObject.Find(GameData.items[i]);
