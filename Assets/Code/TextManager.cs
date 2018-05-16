@@ -55,6 +55,8 @@ public class TextManager : MonoBehaviour
     bool isgive;
     static bool FarmerFirstTime = true;
 
+    public GameObject fadeout;
+
     // Use this for initialization
     void Start()
     {
@@ -754,13 +756,17 @@ public class TextManager : MonoBehaviour
                                 {
                                     inconver = true;
                                     FirstTime = false;
-                                    theTextBox.ReloadScript(CAT4);
+                                    /*theTextBox.ReloadScript(CAT4);
                                     if (theTextBox.currentLine >= CAT4End || theTextBox.currentLine == 0)
                                     {
                                         theTextBox.currentLine = startLine;
                                     }
                                     theTextBox.endAtLine = CAT4End;
-                                    theTextBox.EnableTextBox();
+                                    theTextBox.EnableTextBox();*/
+                                    if (fadeout != null) fadeout.SetActive(true);
+
+                                    StartCoroutine(gameend());
+
                                 }
                                 SaveLoad.Save();
                             }
@@ -847,5 +853,11 @@ public class TextManager : MonoBehaviour
         {
             waitForPress = false;
         }
+    }
+
+    IEnumerator gameend ()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Application.LoadLevel("Cutscene");
     }
 }

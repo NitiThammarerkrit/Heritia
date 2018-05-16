@@ -14,18 +14,7 @@ public class Load : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(cutscene != null)
-		if (cutscene.activeSelf == true)
-        {
-            if (Input.GetKey("z") || Input.GetKey("space"))
-            {
-                Application.LoadLevel(1);
-            }
-        }
-        else
-        {
-
-        }
+       
 	}
     public void NewGame()
     {
@@ -38,7 +27,7 @@ public class Load : MonoBehaviour {
         {
             GameData.events_complete[i] = false;
             GameData.gems_receive = 0;
-            GameData.items[i] = null;
+            GameData.items[i] = "";
             GameData.pass_tutorial = false;
         }   
         SaveLoad.Save();
@@ -75,7 +64,7 @@ public class Load : MonoBehaviour {
 
     IEnumerator DelayBeforeGo ()
     {
-        yield return new WaitForSeconds(18.5f);
-        Application.LoadLevel(1);
+        yield return new WaitForSeconds(1.0f);
+        Application.LoadLevel("Cutscene");
     }
 }
