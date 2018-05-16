@@ -8,7 +8,8 @@ public class PlayerInput : MonoBehaviour {
     Animator anim;
     bool jump = false;
     GameObject zbut;
-
+    public AudioSource runSound;
+    public float delay;
 
     void Start () {
 		player = GetComponent<Player> ();
@@ -26,10 +27,15 @@ public class PlayerInput : MonoBehaviour {
             anim.SetBool("Iswalk",true);
         }
         else
+        {
             anim.SetBool("Iswalk", false);
+            runSound.Play();
+        }
 
         if (Input.GetKeyDown (KeyCode.Space)) {
 			player.OnJumpInputDown ();
+            runSound.Stop();
+            runSound.PlayDelayed(delay);
         }
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			player.OnJumpInputUp ();
