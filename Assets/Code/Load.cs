@@ -34,11 +34,17 @@ public class Load : MonoBehaviour {
     }
     public void Loadlv()
     {
-        Application.LoadLevel(GameData.current_scene);
         SaveLoad.Load();
+        Application.LoadLevel(GameData.current_scene);
     }
     public void Loadscene(string map)
     {
+        Time.timeScale = 1;
+        for (int i = 0; i < 8; i++)
+        {
+            if(GameData.items[i] == null)
+            GameData.items[i] = "";
+        }
         Application.LoadLevel(map);
         SaveLoad.Save();
     }

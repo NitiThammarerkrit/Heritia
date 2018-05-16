@@ -10,6 +10,7 @@ public class WarpGate : MonoBehaviour {
 		if (other.tag == "Player")
         {
             StartCoroutine(GotoNextScene());
+            SaveLoad.Save();
         }
 	}
 

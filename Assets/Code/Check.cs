@@ -25,7 +25,6 @@ public class Check : MonoBehaviour {
     public Sprite cat3;
     // Use this for initialization
     void Start () {
-        GameData.current_scene = SceneManager.GetActiveScene().buildIndex;
         FindObjectOfType<Player>().canmove = true;
         for (int i = 0; i < 8; i++)
         {

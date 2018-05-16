@@ -25,7 +25,7 @@ public class CutsceneController : MonoBehaviour {
         {
             last_cut.SetActive(true);
             last_mu.enabled = true;
-            SaveLoad.Save();
+            //SaveLoad.Save();
             StartCoroutine(goforward(25.0f, "Menu"));
         }
 	}

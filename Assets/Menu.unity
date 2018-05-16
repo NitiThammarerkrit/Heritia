@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_Text: "Developed for CDT 231 & IDD 297 class\nInstructor : Saranpat Thanadsornsarn\n\n\xA92017
     Thammasat University\n\nDeveloper Team : PHAMtom\nNiti Thammarerkrit\nThanaphum
     Khanawattanakul\nPongpok Sirisuwan\nDhornitsorn Rijiranuwat\n\nSpecial Thanks\nSantiparp
-    Steenholt\nPunnut Pongampan\nAttakorn "
+    Steenholt\nPunnut Pongampan\nAttakorn Keeratiwasin"
 --- !u!222 &1084938546
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1542,7 +1542,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
